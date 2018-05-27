@@ -6,13 +6,13 @@
         <%= @user.name %>
         </h3>
       </div>
-      <div class="panel body">
+      <div class="panel-doby">
         <img class="media-object img-rounded img-responsive"
              src="<%= gravatar_url(@user, { size: 500 }) %>"
              alt="">
       </div>
     </div>
-    <% render "relationships/follow_button", user: @user %>
+    <%= render "relationships/follow_button", user: @user %>
   </aside>
   <div class="col-xs-8">
     <ul class="nav nav-tabs nav-justified">
@@ -34,7 +34,6 @@
         <span class="badge"><%= @count_followers %></span>
       <% end %>
     </ul>
-    
-  <%= render "microposts/microposts", microposts: @microposts %>
+    <%= render "users", users: @followers %>
   </div>
 </div>
